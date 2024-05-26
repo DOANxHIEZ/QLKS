@@ -4,187 +4,257 @@
     Layout = "~/Views/Shared/_LayoutPublic.cshtml";
 }
 
-<div class="hero-wrap js-fullheight" style="background-image: url('https://onetouchmedia.vn/wp-content/uploads/2019/10/N.NT-65-1024x683.jpg');height : 200px !important ">
-    <div class="overlay"></div>
+<!-- Slide -->
+<div class="site-blocks-cover overlay" style="background-image: url('../../Content/images/hero_1.jpg');" data-aos="fade" data-stellar-background-ratio="0.5">
     <div class="container">
-        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start" data-scrollax-parent="true">
-            <div class="col-md-9 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-                <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><strong>Hotel <br></strong> Chào mừng bạn đến với</h1>
-                <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Dịch vụ cho thuê phòng khác sạn của chúng tôi</p>
-                <div class="block-17 my-4">
-                    <form action="/PublicRoom/Search" method="post" class="d-block d-flex">
-                        <div class="fields d-block d-flex">
-                            <div class="textfield-search one-third">
-                                <input type="text" name="name" class="form-control" placeholder="Ví dụ: phòng 313" required>
-                            </div>
-                            <div class="select-wrap one-third">
-                                <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                                <select name="idType" id="" class="form-control" placeholder="Tên phòng">
-                                    <option value="0">Loại phòng</option>
-                                    @foreach (var item in ViewBag.ListType)
-                                    {
-                                        <option value="@item.idType">@item.name</option>
-                                    }
-                                </select>
-                            </div>
-                            <div class="textfield-search one-third">
-                                <input type="number" name="numberAdult" class="form-control" required placeholder="Số người lớn">
-                            </div>
-                            <div class="textfield-search one-third">
-                                <input type="number" name="numberChildren" class="form-control" required placeholder="Số trẻ em">
-                            </div>
-                        </div>
-                        <input type="submit" class="search-submit btn btn-primary" value="Tìm kiếm">
-                    </form>
-                </div>
-               @* <p>Or browse the highlights</p>
-                <p class="browse d-md-flex">
-                    <span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><i class="flaticon-fork"></i>Restaurant</a></span>
-                    <span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><i class="flaticon-hotel"></i>Hotel</a></span>
-                    <span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><i class="flaticon-meeting-point"></i>Places</a></span>
-                    <span class="d-flex justify-content-md-center align-items-md-	center"><a href="#"><i class="flaticon-shopping-bag"></i>Shopping</a></span>
-                </p>*@
+        <div class="row align-items-center justify-content-center">
+            <div class="col-md-7 text-center" data-aos="fade">
+                <h1 class="mb-2">Welcome To Misaki</h1>
+                <h2 class="caption">Hotel &amp; Resort</h2>
             </div>
         </div>
     </div>
 </div>
 
-
-<section class="ftco-section bg-light">
+<!-- List Rooms -->
+<div class="site-section bg-light">
     <div class="container">
-        <div class="row justify-content-start mb-5 pb-3">
-            <div class="col-md-7 heading-section ftco-animate">
-                <span class="subheading">Top 3</span>
-                <h2 class="mb-4">Phòng có lượt xem nhiều</h2>
+        <div class="row">
+            <div class="col-md-6 mx-auto text-center mb-5 section-heading">
+                <h2 class="mb-5">Danh sách phòng</h2>
             </div>
         </div>
-    </div>
-    <div class="container-fluid">
         <div class="row">
-            @foreach (var item in ViewBag.ListRoomTop5)
+            @foreach (var item in ViewBag.ListRoom)
             {
-            <div class="col-md-4">
-                <div class="destination">
-                    <a href="/PublicRoom/DetailRoom/@item.idRoom">
-                        <img width="380px" class="img img-2 d-flex justify-content-center align-items-center" src="/Content/images/@item.image">
-
-                    </a>
-                    <div class="text p-3">
-                        <div class="d-flex">
-                            <div class="one">
-                                <h3><a href="/PublicRoom/DetailRoom/@item.idRoom">@item.name</a></h3>
-                                <p class="rate">
-                                    <i class="icon-star"></i>
-                                    <i class="icon-star"></i>
-                                    <i class="icon-star"></i>
-                                    <i class="icon-star"></i>
-                                    <i class="icon-star"></i>
-                                    <span>@item.view lượt xem</span>
-                                </p>
-                            </div>
-
+                <!-- Phòng đôi -->
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="hotel-room text-center">
+                        <a href="/PublicRoom/DetailRoom/@item.idRoom" class="d-block mb-0 thumbnail"><img src="/Content/images/@item.image" alt="Image" class="img-fluid"></a>
+                        <div class="hotel-room-body">
+                            <h3 class="heading mb-0"><a href="/PublicRoom/DetailRoom/@item.idRoom">@item.name</a></h3>
+                            <p class="rate">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span> @item.view lượt xem</span>
+                            </p>
                             @{
                                 int price1 = item.cost - item.cost * item.discount / 100;
                             }
-
+                            <strong class="price">Giá phòng :  @price1 VND</strong>
+                            <p class="ml-auto"><a href="/PublicRoom/DetailRoom/@item.idRoom">Xem chi tiết</a></p>
                         </div>
-                        @*   <p>Far far away, behind the word mountains, far from the countries</p>*@
-                        <p class="days"><span>@item.Type.name</span></p>
-                        <hr>
-                        <p class="bottom-area d-flex">
-                            <span>Giá phòng : @price1 VNĐ</span>
-                            <span class="ml-auto"><a href="/PublicRoom/DetailRoom/@item.idRoom">Xem chi tiết</a></span>
-                        </p>
                     </div>
                 </div>
-            </div>
             }
-        </div>
-    </div>
-</section>
-
-<section class="ftco-section" style="margin-top : -60px !important">
-    <div class="container">
-        <div class="row justify-content-start mb-5 pb-3">
-            <div class="col-md-7 heading-section ftco-animate">
-                <span class="subheading">Top 3</span>
-                <h2 class="mb-4">Phòng giảm giá</h2>
             </div>
-        </div>
     </div>
-    <div class="container-fluid">
-        <div class="row">
-            @foreach (var item in ViewBag.ListRoomDiscount)
-            {
-            <div class="col-md-4">
-                <div class="destination">
-                    <a href="/PublicRoom/DetailRoom/@item.idRoom">
-                        <img width="380px" class="img img-2 d-flex justify-content-center align-items-center" src="/Content/images/@item.image">
+</div>
 
+<!-- Info -->
+<div class="site-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 mb-5 mb-md-0">
+                <div class="img-border">
+                    <a href="https://vimeo.com/28959265" class="popup-vimeo image-play">
+                        <img src="~/Content/images/img_7.jpg" alt="" class="img-fluid">
                     </a>
-                    <div class="text p-3">
-                        <div class="d-flex">
-                            <div class="one">
-                                <h3><a href="/PublicRoom/DetailRoom/@item.idRoom">@item.name</a></h3>
-                                <p class="rate">
-                                    <i class="icon-star"></i>
-                                    <i class="icon-star"></i>
-                                    <i class="icon-star"></i>
-                                    <i class="icon-star"></i>
-                                    <i class="icon-star"></i>
-                                    <span>@item.view lượt xem</span>
-                                </p>
-                            </div>
-
-                            @{
-                                int price1 = item.cost - item.cost * item.discount / 100;
-                            }
-
-                        </div>
-                        @*   <p>Far far away, behind the word mountains, far from the countries</p>*@
-                        <p class="days"><span>@item.Type.name</span></p>
-                        <hr>
-                        <p class="bottom-area d-flex">
-                            <span>Giá phòng : @price1 VNĐ</span>
-                            <span class="ml-auto"><a href="/PublicRoom/DetailRoom/@item.idRoom">Xem chi tiết</a></span>
-                        </p>
-                    </div>
                 </div>
+                <img src="~/Content/images/img_4.jpg" alt="Image" class="img-fluid image-absolute">
             </div>
-            }
-         
+            <div class="col-md-5 ml-auto">
+                <div class="section-heading text-left">
+                    <h2 class="mb-5">Thông Tin</h2>
+                </div>
+                <p class="mb-4">
+                    Khách Sạn Misaki là biểu tượng của sự hoàn hảo và sang trọng tại thành phố,
+                    nơi hòa quyện giữa vẻ đẹp hiện đại và sự lãng mạn của nét kiến trúc truyền thống. Với vị
+                    trí tuyệt vời bên bờ biển, Misaki là điểm đến lý tưởng cho những ... <a href="about.html">Xem tiếp -></a>
+                </p>
+            </div>
         </div>
     </div>
-</section>
+</div>
 
-@*<section class="ftco-section bg-light">
+<!-- Convenient -->
+<div class="site-section">
     <div class="container">
-        <div class="row justify-content-start mb-5 pb-3">
-            <div class="col-md-7 heading-section ftco-animate">
-               
-                <h2>Những dịch vụ của khách sạn</h2>
+        <div class="row">
+            <div class="col-md-6 mx-auto text-center mb-5 section-heading">
+                <h2 class="mb-5" style="padding: 0;">Các Tiện Nghi Của Khách Sạn</h2>
             </div>
         </div>
-        <div class="row d-flex">
-            @foreach (var item in ViewBag.ListService)
-            {
-                <div class="col-md-3 d-flex ftco-animate">
-                    <div class="blog-entry align-self-stretch">
-                        <a href="#" class="block-20" style="background-image: url('https://static.vecteezy.com/system/resources/previews/000/633/178/non_2x/vector-hotel-service-icons.jpg');width : 380px !important">
-                        </a>
-                        <div class="text p-4 d-block">
-                            <h3 class="heading mt-3"><a href="#">@item.name</a></h3>
-                            <div class="meta mb-3">
-                                <div>@item.cost VNĐ</div>
-                            </div>
-                        </div>
-                    </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="text-center p-4 item">
+                    <span class="flaticon-pool display-3 mb-3 d-block text-primary"></span>
+                    <h2 class="h5">Hồ bơi</h2>
                 </div>
-            }
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="text-center p-4 item">
+                    <span class="flaticon-desk display-3 mb-3 d-block text-primary"></span>
+                    <h2 class="h5">Lễ tân 24/7</h2>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="text-center p-4 item">
+                    <span class="flaticon-exit display-3 mb-3 d-block text-primary"></span>
+                    <h2 class="h5">Thoát hiểm an toàn</h2>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="text-center p-4 item">
+                    <span class="flaticon-parking display-3 mb-3 d-block text-primary"></span>
+                    <h2 class="h5">Bãi đổ xe</h2>
+                </div>
+            </div>
 
-          
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="text-center p-4 item">
+                    <span class="flaticon-hair-dryer display-3 mb-3 d-block text-primary"></span>
+                    <h2 class="h5">Tạo mẫu tóc</h2>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="text-center p-4 item">
+                    <span class="flaticon-minibar display-3 mb-3 d-block text-primary"></span>
+                    <h2 class="h5">Quầy bar</h2>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="text-center p-4 item">
+                    <span class="flaticon-drink display-3 mb-3 d-block text-primary"></span>
+                    <h2 class="h5">Thức uống</h2>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="text-center p-4 item">
+                    <span class="flaticon-cab display-3 mb-3 d-block text-primary"></span>
+                    <h2 class="h5">Xe đưa đón sân bay</h2>
+                </div>
+            </div>
+
         </div>
     </div>
-</section>*@
+</div>
+
+<!-- Photo Library -->
+<div class="site-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto text-center mb-5 section-heading">
+                <h2 class="mb-5">Thư Viện Ảnh</h2>
+            </div>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-md-6 col-lg-3">
+                <a href="~/Content/images/img_1.jpg" class="image-popup img-opacity"><img src="~/Content/images/img_1.jpg" alt="Image" class="img-fluid"></a>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <a href="~/Content/images/img_2.jpg" class="image-popup img-opacity"><img src="~/Content/images/img_2.jpg" alt="Image" class="img-fluid"></a>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <a href="~/Content/images/img_3.jpg" class="image-popup img-opacity"><img src="~/Content/images/img_3.jpg" alt="Image" class="img-fluid"></a>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <a href="~/Content/images/img_4.jpg" class="image-popup img-opacity"><img src="~/Content/images/img_4.jpg" alt="Image" class="img-fluid"></a>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <a href="~/Content/images/img_4.jpg" class="image-popup img-opacity"><img src="~/Content/images/img_5.jpg" alt="Image" class="img-fluid"></a>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <a href="~/Content/images/img_5.jpg" class="image-popup img-opacity"><img src="~/Content/images/img_6.jpg" alt="Image" class="img-fluid"></a>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <a href="~/Content/images/img_6.jpg" class="image-popup img-opacity"><img src="~/Content/images/img_7.jpg" alt="Image" class="img-fluid"></a>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <a href="~/Content/images/img_7.jpg" class="image-popup img-opacity"><img src="~/Content/images/img_8.jpg" alt="Image" class="img-fluid"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Feedback-->
+<div class="site-section block-14 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto text-center mb-5 section-heading">
+                <h2>Phản hồi khách hàng</h2>
+            </div>
+        </div>
+
+        <div class="nonloop-block-14 owl-carousel">
+            <div class="p-4">
+                <div class="d-flex block-testimony">
+                    <div class="person mr-3">
+                        <img src="~/Content/images/person_1.jpg" alt="Image" class="img-fluid rounded">
+                    </div>
+                    <div>
+                        <h2 class="h5">Anh Huy</h2>
+                        <blockquote>&ldquo;Tôi đã có một trải nghiệm tuyệt vời tại Khách Sạn Misaki! 
+                        Dịch vụ tận tâm và chuyên nghiệp, cùng không gian sang trọng và tiện nghi đã 
+                        làm cho kỳ nghỉ của tôi trở thành một trải nghiệm đáng nhớ. Tôi sẽ chắc chắn 
+                        quay lại lần sau!&rdquo;</blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="p-4">
+                <div class="d-flex block-testimony">
+                    <div class="person mr-3">
+                        <img src="~/Content/images/person_2.jpg" alt="Image" class="img-fluid rounded">
+                    </div>
+                    <div>
+                        <h2 class="h5">Hoàng Anh</h2>
+                        <blockquote>&ldquo;Không gian tại Khách Sạn Misaki thực sự tuyệt vời, từ kiến 
+                        trúc đến trang thiết bị đều rất đẳng cấp. Đặc biệt, nhân viên ở đây luôn niềm 
+                        nở và nhiệt tình, tạo cảm giác như đang được đón tiếp như một thành viên trong 
+                        gia đình. Tôi đã có một kỳ nghỉ thật sự thư giãn và đáng nhớ ở đây!&rdquo;</blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Location -->
+<div class="py-5 quick-contact-info">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <div>
+                    <span class="icon-room text-white h2 d-block"></span>
+                    <h2>Location</h2>
+                    <p class="mb-0">Đường Nguyễn Tất Thành | Cam Hải Đông | Cam Lâm | Khánh Hoà 57615 | Việt Nam</p>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div>
+                    <span class="icon-clock-o text-white h2 d-block"></span>
+                    <h2>Service Times</h2>
+                    <p class="mb-0">Thứ 2 - Chủ Nhật: 6:30am - 23:30pm</p>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div>
+                    <span class="icon-comments text-white h2 d-block"></span>
+                    <h2>Get In Touch</h2>
+                    <p class="mb-0">
+                        Email: info@misakihotel.com <br>
+                        Hotline: +84 1800 577 745
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 

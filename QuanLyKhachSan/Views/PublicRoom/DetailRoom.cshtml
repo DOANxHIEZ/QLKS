@@ -3,7 +3,6 @@
     ViewBag.Title = "DetailRoom";
     Layout = "~/Views/Shared/_LayoutPublic.cshtml";
 }
-
 <style>
     .star1 {
         font-size: 30px;
@@ -11,19 +10,18 @@
         cursor: pointer;
     }
 
-        .star1:hover,
-        .star1.active {
-            color: #f85959;
-        }
+   .star1:hover,
+   .star1.active {
+         color: orange;
+   }
 </style>
 @{ var userInfomatiom = (QuanLyKhachSan.Models.User)Session["USER"]; }
-<div class="hero-wrap js-fullheight" style="background-image: url('https://onetouchmedia.vn/wp-content/uploads/2019/10/N.NT-65-1024x683.jpg'); height: 400px ">
-    <div class="overlay"></div>
+<div class="site-blocks-cover overlay" style="background-image: url('../../content/images/hero_1.jpg'); margin-top: 71px; " data-aos="fade" data-stellar-background-ratio="0.5">
     <div class="container">
-        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
-            <div class="col-md-9 text-center" style="margin-top: 200px" data-scrollax=" properties: { translateY: '70%' }">
-                <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="/">Phòng</a></span> <span>Chi tiết</span></p>
-                <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">@ViewBag.Room.name</h1>
+        <div class="row align-items-center justify-content-center">
+            <div class="col-md-7 text-center" data-aos="fade">
+                <span class="caption mb-3">Misaki Hotel &amp; Resort</span>
+                <h1 class="mb-4">@ViewBag.Room.name</h1>
             </div>
         </div>
     </div>
@@ -92,57 +90,28 @@
         </script>
     </div>
 }
+
+
 <section class="ftco-section ftco-degree-bg">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="row">
-                    @*<div class="col-md-12 ">
-                            <div class="s">
-                                <div class="item">
-                                    <img src="/Content/images/@ViewBag.Room.image" class="hotel-img" />
-                                </div>
-                            </div>
-                        </div>*@
                     <div class="col-md-12 hotel-single mt-4 mb-5 ">
-
-                        <h2>@ViewBag.Room.name</h2>
                         @{
                             int priceNew = ViewBag.Room.cost - ViewBag.Room.cost * ViewBag.Room.discount / 100;
                         }
+
                         <h5>Giá gốc : @ViewBag.Room.cost VNĐ</h5>
                         <h6>Giảm giá :  @ViewBag.Room.discount %</h6>
                         <h5>Giá hiện tại : @priceNew VNĐ </h5>
                         <h5 class="days"><span>Số lượng người lớn: @ViewBag.Room.numberAdult</span></h5>
                         <h5 class="days"><span>Số lượng trẻ em: @ViewBag.Room.numberChildren</span></h5>
                         <p class="rate mb-5">
-                            <span class="loc"><a href="#"><i class="icon-map"></i><span>@ViewBag.Room.Type.name</span></a></span>
-                            (@Math.Round(ViewBag.Ave, 1)/5<i class="icon-star"></i> -
+                            <span class="loc"><a href="#"><i class="icon-map" style="color: orange"></i><span>@ViewBag.Room.Type.name</span></a></span>
+                            (@Math.Round(ViewBag.Ave, 1)/5<i class="fa fa-star checked"></i> -
                             <span>@ViewBag.Room.view lượt xem</span>)
                         </p>
-                        @*<p class="days"><span>Số lượng người lớn: @ViewBag.Room.numberAdult</span></p>
-                            <p class="days"><span>Số lượng trẻ em: @ViewBag.Room.numberChildren</span></p>*@
-                        @*<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img class="d-block w-100" src="https://antimatter.vn/wp-content/uploads/2022/10/hinh-anh-3d.jpg" alt="First slide">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img class="d-block w-100" src="https://haycafe.vn/wp-content/uploads/2022/01/Hinh-nen-Su-Tu-dep-ngau-nhat.jpg" alt="Second slide">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img class="d-block w-100" src="https://i0.wp.com/thatnhucuocsong.com.vn/wp-content/uploads/2022/01/hinh-nen-su-tu-oai-ve.jpeg?ssl\u003d1" alt="Third slide">
-                                    </div>
-                                </div>
-                                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>*@
                         <h5>Mô tả phòng</h5>
                         <p>@Html.Raw(ViewBag.Room.description)</p>
                         <h5>Bình luận</h5>
@@ -153,7 +122,7 @@
                                 {
                                     <li class="comment">
                                         <div class="comment-body">
-                                            <p><strong style="font-size: 1rem !important;">@item.User.fullName : </strong> @item.text ( @item.star  <i class="icon-star" style="color: #f85959 !important; "></i>) - @item.createdDate</p>
+                                            <p><strong style="font-size: 1rem !important;">@item.User.fullName : </strong> @item.text ( @item.star  <i class="fa fa-star checked" ></i>) - @item.createdDate</p>
                                         </div>
                                     </li>
                                 }
@@ -232,11 +201,11 @@
 
 
                 </div>
-            </div> <!-- .col-md-8 -->
+            </div>
         </div>
     </div>
     <script>
-        const stars = document.querySelectorAll(".star1");
+        const stars = document.querySelectorAll("star1");
         var numberStart = 5;
         for (let i = 0; i < stars.length; i++) {
             stars[i].addEventListener("click", function () {
@@ -250,10 +219,6 @@
                 resetStars();
                 setActiveStars(i);
             });
-
-         @*   stars[i].addEventListener("mouseout", function () {
-                resetStars();
-            });*@
         }
         const commentForm = document.querySelector("#comment-form");
         const commentInput = document.querySelector("#comment-input");

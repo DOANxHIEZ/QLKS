@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\QuanLyKhachSanVer2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CA79D76C-BD15-4578-B3F4-5D579F66BBD7}|QuanLyKhachSan\\WEBSITE.csproj|D:\\QuanLyKhachSanVer2\\quanlykhachsan\\views\\shared\\_layoutpublic.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CA79D76C-BD15-4578-B3F4-5D579F66BBD7}|QuanLyKhachSan\\WEBSITE.csproj|solutionrelative:quanlykhachsan\\views\\shared\\_layoutpublic.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA79D76C-BD15-4578-B3F4-5D579F66BBD7}|QuanLyKhachSan\\WEBSITE.csproj|D:\\QuanLyKhachSanVer2\\quanlykhachsan\\views\\publichome\\event.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CA79D76C-BD15-4578-B3F4-5D579F66BBD7}|QuanLyKhachSan\\WEBSITE.csproj|solutionrelative:quanlykhachsan\\views\\publichome\\event.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA79D76C-BD15-4578-B3F4-5D579F66BBD7}|QuanLyKhachSan\\WEBSITE.csproj|D:\\QuanLyKhachSanVer2\\quanlykhachsan\\views\\publicmodules\\header.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CA79D76C-BD15-4578-B3F4-5D579F66BBD7}|QuanLyKhachSan\\WEBSITE.csproj|solutionrelative:quanlykhachsan\\views\\publicmodules\\header.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA79D76C-BD15-4578-B3F4-5D579F66BBD7}|QuanLyKhachSan\\WEBSITE.csproj|D:\\QuanLyKhachSanVer2\\quanlykhachsan\\content\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{CA79D76C-BD15-4578-B3F4-5D579F66BBD7}|QuanLyKhachSan\\WEBSITE.csproj|solutionrelative:quanlykhachsan\\content\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_LayoutPublic.cshtml",
+              "DocumentMoniker": "D:\\QuanLyKhachSanVer2\\QuanLyKhachSan\\Views\\Shared\\_LayoutPublic.cshtml",
+              "RelativeDocumentMoniker": "QuanLyKhachSan\\Views\\Shared\\_LayoutPublic.cshtml",
+              "ToolTip": "D:\\QuanLyKhachSanVer2\\QuanLyKhachSan\\Views\\Shared\\_LayoutPublic.cshtml",
+              "RelativeToolTip": "QuanLyKhachSan\\Views\\Shared\\_LayoutPublic.cshtml",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAAADkAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-21T15:49:55.058Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Header.cshtml",
+              "DocumentMoniker": "D:\\QuanLyKhachSanVer2\\QuanLyKhachSan\\Views\\PublicModules\\Header.cshtml",
+              "RelativeDocumentMoniker": "QuanLyKhachSan\\Views\\PublicModules\\Header.cshtml",
+              "ToolTip": "D:\\QuanLyKhachSanVer2\\QuanLyKhachSan\\Views\\PublicModules\\Header.cshtml",
+              "RelativeToolTip": "QuanLyKhachSan\\Views\\PublicModules\\Header.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-21T15:48:35.982Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "style.css",
+              "DocumentMoniker": "D:\\QuanLyKhachSanVer2\\QuanLyKhachSan\\Content\\css\\style.css",
+              "RelativeDocumentMoniker": "QuanLyKhachSan\\Content\\css\\style.css",
+              "ToolTip": "D:\\QuanLyKhachSanVer2\\QuanLyKhachSan\\Content\\css\\style.css",
+              "RelativeToolTip": "QuanLyKhachSan\\Content\\css\\style.css",
+              "ViewState": "AQIAADAAAAAAAAAAAAAAAAkAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-05-21T16:29:36.695Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Event.cshtml",
+              "DocumentMoniker": "D:\\QuanLyKhachSanVer2\\QuanLyKhachSan\\Views\\PublicHome\\Event.cshtml",
+              "RelativeDocumentMoniker": "QuanLyKhachSan\\Views\\PublicHome\\Event.cshtml",
+              "ToolTip": "D:\\QuanLyKhachSanVer2\\QuanLyKhachSan\\Views\\PublicHome\\Event.cshtml",
+              "RelativeToolTip": "QuanLyKhachSan\\Views\\PublicHome\\Event.cshtml",
+              "ViewState": "AQIAABkAAAAAAAAAAAAEwD4AAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-26T14:28:46.065Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

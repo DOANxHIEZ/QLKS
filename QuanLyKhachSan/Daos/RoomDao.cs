@@ -17,9 +17,9 @@ namespace QuanLyKhachSan.Daos
             return myDb.rooms.ToList();
         }
 
-        public List<Room> GetRoomTop5()
+        public List<Room> GetRoom()
         {
-            return myDb.rooms.OrderByDescending(x => x.view).Take(3).ToList();
+            return myDb.rooms.OrderByDescending(x => x.view).Take(6).ToList();
         }
 
         public List<Room> GetRoomDiscount()

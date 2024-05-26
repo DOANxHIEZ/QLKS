@@ -3,17 +3,7 @@
     ViewBag.Title = "ProfileUser";
     Layout = "~/Views/Shared/_LayoutPublic.cshtml";
 }
-<div class="hero-wrap js-fullheight" style="background-image: url('https://onetouchmedia.vn/wp-content/uploads/2019/10/N.NT-65-1024x683.jpg'); height: 200px ">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
-            <div class="col-md-9 text-center" style="margin-top: 200px" data-scrollax=" properties: { translateY: '70%' }">
-                <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="/">Trang chủ</a></span> <span>Thông tin</span></p>
-                <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Thông tin cá nhân</h1>
-            </div>
-        </div>
-    </div>
-</div>
+
 @if (ViewBag.mess == "Success")
 {
     <div class="toast" data-delay="1000" style="position:fixed; top: 100PX; left: 40PX;z-index: 2000;width: 300px">
@@ -46,6 +36,16 @@
         </script>
     </div>
 }
+<div class="site-blocks-cover overlay" style="background-image: url('../../content/images/hero_1.jpg');" data-aos="fade" data-stellar-background-ratio="0.5">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-md-7 text-center" style="padding: 0;" data-aos="fade">
+                <span class="caption mb-3">Misaki Hotel &amp; Resort</span>
+                <h1 class="mb-4">Thông Tin Cá Nhân</h1>
+            </div>
+        </div>
+    </div>
+</div>
 <section class="site-section">
     <div class="container">
         <div class="row">

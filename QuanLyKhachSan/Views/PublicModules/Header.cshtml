@@ -1,33 +1,52 @@
-﻿<div class="container">
-    <a class="navbar-brand" href="/">Hotel</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="oi oi-menu"></span> Menu
-    </button>
-    @{ var userInfomatiom = (QuanLyKhachSan.Models.User)Session["USER"]; }
-    <div class="collapse navbar-collapse" id="ftco-nav">
-        <ul class="navbar-nav ml-auto">
-
-            <li class="nav-item "><a href="/" class="nav-link">Trang chủ</a></li>
-
-            <li class="nav-item "><a href="/PublicHome/Introduce" class="nav-link">Giới thiệu</a></li>
-
-            <li class="nav-item "><a href="/PublicHome/AboutUs" class="nav-link">Về chúng tôi</a></li>
-
-            <li class="nav-item "><a href="/PublicRoom/Index/0" class="nav-link">Phòng trống</a></li>
-
-            <li class="nav-item "><a href="/PublicHome/Contact" class="nav-link">Liên hệ</a></li>
-
-
-            @if (userInfomatiom != null)
-            {
-                <li class="nav-item"><a href="/PublicBooking/GetBookings/@userInfomatiom.idUser" class="nav-link">Lịch sử đặt phòng</a></li>
-                <li class="nav-item"><a href="/PublicUser/ProfileUser/@userInfomatiom.idUser" class="nav-link">@userInfomatiom.fullName</a></li>
-                <li class="nav-item cta"><a href="/PublicAuthentication/Logout" class="nav-link"><span>Đăng xuất</span></a></li>
-            }
-            else
-            {
-                <li class="nav-item cta"><a href="/PublicAuthentication/Login" class="nav-link"><span>Đăng nhập</span></a></li>
-            }
-        </ul>
+﻿<div class="container" style="padding: 0;">
+    <div class="site-navbar bg-light">
+        <div class="py-1">
+            <div class="row align-items-center">
+                <div class="col-2" style="padding: 0;">
+                    <h2 class="mb-0 site-logo"><a href="/">MISAKI HOTEL</a></h2>
+                </div>
+                @{ var userInfomatiom = (QuanLyKhachSan.Models.User)Session["USER"]; }
+                <div class="col-10" style="padding:0;">
+                    <nav class="site-navigation text-right" role="navigation">
+                        <div class="container" style="padding: 0;">
+                            <ul class="site-menu js-clone-nav d-none d-lg-block" style="padding:0;">
+                                <li><a href="/">Trang chủ</a></li>
+                                <li class="has-children">
+                                    <a href="/PublicRoom/Index/0">Phòng</a>
+                                    <ul class="dropdown arrow-top">
+                                        <li><a href="/PublicRoom/Index/0">Hiện có</a></li>
+                                        <li><a href="/PublicRoom/Index/0">Phòng Khách Sạn</a></li>
+                                        <li><a href="/PublicRoom/Index/0">Phòng Suite</a></li>
+                                        <li><a href="/PublicRoom/Index/0">Phòng Studio</a></li>
+                                        <li><a href="/PublicRoom/Index/0">Villa</a></li>
+                                        <li class="has-children">
+                                            <a href="rooms.html">Dịch vụ</a>
+                                            <ul class="dropdown">
+                                                <li><a href="/PublicRoom/Index">Ẩm Thực</a></li>
+                                                <li><a href="/PublicRoom/Index">Spa</a></li>
+                                                <li><a href="/PublicRoom/Index">Vui Chơi Giải Trí</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="/PublicHome/Event">Sự kiện</a></li>
+                                <li><a href="/PublicHome/Introduce">Thông tin</a></li>
+                                <li><a href="/PublicHome/Contact">Liên hệ</a></li>
+                                @if (userInfomatiom != null)
+                                {
+                                    <li><a href="/PublicBooking/GetBookings/@userInfomatiom.idUser">Lịch sử đặt phòng</a></li>
+                                    <li><a href="/PublicUser/ProfileUser/@userInfomatiom.idUser">@userInfomatiom.fullName</a></li>
+                                    <li class="nav-item cta"><a href="/PublicAuthentication/Logout" ><span>Đăng xuất</span></a></li>
+                                }
+                                else
+                                {
+                                    <li class="nav-item cta"><a href="/PublicAuthentication/Login"><span>Đăng nhập</span></a></li>
+                                }
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

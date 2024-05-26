@@ -15,7 +15,7 @@ namespace QuanLyKhachSan.Controllers.Public
         // GET: PublicHome
         public ActionResult Index()
         {
-            ViewBag.ListRoomTop5 = roomDao.GetRoomTop5();
+            ViewBag.ListRoom = roomDao.GetRoom();
             ViewBag.ListRoomDiscount = roomDao.GetRoomDiscount();
             ViewBag.ListService = serviceDao.GetServicesTop5();
             ViewBag.ListType = typeDao.GetTypes();
@@ -29,9 +29,9 @@ namespace QuanLyKhachSan.Controllers.Public
             return View();
         }
 
-        public ActionResult AboutUs()
+        public ActionResult Event()
         {
-            ViewBag.active = "aboutus";
+            ViewBag.active = "event";
             return View();
         }
 
